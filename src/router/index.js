@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import home from '../views/home.vue';
+import update from '../views/update.vue';
 
 Vue.use(VueRouter);
 
@@ -13,9 +14,7 @@ const routes = [
   {
     path: '/update/:breedId',
     name: '/update/:breedId',
-    component: () => {
-      import(/* webpackChunkName: "update" */ '../views/update.vue');
-    },
+    component: update,
   },
 ];
 

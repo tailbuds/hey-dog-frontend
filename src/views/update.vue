@@ -100,7 +100,7 @@
 
           <v-row>
             <v-col cols="12" md="12">
-              <v-text-field v-model="heigthUnit" type="number" min="0" label="heigthUnit"></v-text-field>
+              <v-text-field v-model="heightUnit" type="number" min="0" label="heightUnit"></v-text-field>
             </v-col>
           </v-row>
 
@@ -263,6 +263,7 @@
 <script>
 import url from "../url";
 import axios from "axios";
+
 export default {
   // var id=$routeParams.params.id;
   //   mounted() {
@@ -296,7 +297,7 @@ export default {
       maxMaleWeight: "",
       minFemaleWeight: "",
       maxFemaleWeight: "",
-      heigthUnit: "",
+      heightUnit: "",
       minMaleHeight: "",
       maxMaleHeight: "",
       minFemaleHeight: "",
@@ -339,7 +340,7 @@ export default {
       var maxMaleWeight = this.maxMaleWeight;
       var minFemaleWeight = this.minFemaleWeight;
       var maxFemaleWeight = this.minFemaleWeight;
-      var heigthUnit = this.heigthUnit;
+      var heightUnit = this.heightUnit;
       var minMaleHeight = this.minMaleWeight;
       var maxMaleHeight = this.maxMaleWeight;
       var minFemaleHeight = this.minFemaleWeight;
@@ -379,7 +380,7 @@ export default {
           maxMaleWeight: maxMaleWeight,
           minFemaleWeight: minFemaleWeight,
           maxFemaleWeight: maxFemaleWeight,
-          heigthUnit: heigthUnit,
+          heightUnit: heightUnit,
           minMaleHeight: minMaleHeight,
           maxMaleHeight: maxMaleHeight,
           minFemaleHeight: minFemaleHeight,

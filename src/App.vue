@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <v-content>
-      <admin />
+      <router-view></router-view>
     </v-content>
   </v-app>
 </template>
@@ -9,14 +9,8 @@
 
 
 <script>
-import admin from "./components/admin";
-
 export default {
   name: "App",
-
-  components: {
-    admin
-  },
 
   data: () => ({
     //
