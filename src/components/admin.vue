@@ -23,6 +23,7 @@
               <v-file-input v-model="puppyImg" accept="image/*" label="puppy-img"></v-file-input>
             </v-col>
           </v-row>
+
           <v-row>
             <v-col cols="12" md="6">
               <v-text-field v-model="minLife" type="number" min="0" label="minLife" required></v-text-field>
@@ -32,6 +33,7 @@
               <v-text-field v-model="maxLife" type="number" min="0" label="maxlife" required></v-text-field>
             </v-col>
           </v-row>
+
           <v-row>
             <v-col cols="12" md="6">
               <v-text-field v-model="learningRate" type="text" label="learningRate" required></v-text-field>
@@ -41,6 +43,7 @@
               <v-text-field v-model="size" type="text" label="size" required></v-text-field>
             </v-col>
           </v-row>
+
           <v-row>
             <v-col cols="12" md="6">
               <v-text-field v-model="minLitter" type="number" min="0" label="minLitter" required></v-text-field>
@@ -50,11 +53,13 @@
               <v-text-field v-model="maxLitter" type="number" min="0" label="maxLitter" required></v-text-field>
             </v-col>
           </v-row>
+
           <v-row>
             <v-col cols="12" md="12">
               <v-text-field v-model="weightUnit" type="number" min="0" label="weightUnit"></v-text-field>
             </v-col>
           </v-row>
+
           <v-row>
             <v-col cols="12" md="6">
               <v-text-field
@@ -76,6 +81,7 @@
               ></v-text-field>
             </v-col>
           </v-row>
+
           <v-row>
             <v-col cols="12" md="6">
               <v-text-field
@@ -100,7 +106,7 @@
 
           <v-row>
             <v-col cols="12" md="12">
-              <v-text-field v-model="heigthUnit" type="number" min="0" label="heigthUnit"></v-text-field>
+              <v-text-field v-model="heightUnit" type="number" min="0" label="heightUnit"></v-text-field>
             </v-col>
           </v-row>
 
@@ -323,7 +329,7 @@ export default {
       maxMaleWeight: null,
       minFemaleWeight: null,
       maxFemaleWeight: null,
-      heigthUnit: "13",
+      heightUnit: "13",
       minMaleHeight: null,
       maxMaleHeight: null,
       minFemaleHeight: null,
@@ -380,7 +386,7 @@ export default {
       var maxMaleWeight = this.maxMaleWeight;
       var minFemaleWeight = this.minFemaleWeight;
       var maxFemaleWeight = this.minFemaleWeight;
-      var heigthUnit = this.heigthUnit;
+      var heightUnit = this.heightUnit;
       var minMaleHeight = this.minMaleWeight;
       var maxMaleHeight = this.maxMaleWeight;
       var minFemaleHeight = this.minFemaleWeight;
@@ -423,7 +429,7 @@ export default {
             maxMaleWeight: maxMaleWeight,
             minFemaleWeight: minFemaleWeight,
             maxFemaleWeight: maxFemaleWeight,
-            heigthUnit: heigthUnit,
+            heightUnit: heightUnit,
             minMaleHeight: minMaleHeight,
             maxMaleHeight: maxMaleHeight,
             minFemaleHeight: minFemaleHeight,
