@@ -1,62 +1,97 @@
 <template>
   <v-app>
     <v-row>
-      <v-col lg="7">
+      <v-col lg="8">
         <v-container>
           <div class="display-2 black-text text-center">Upload Data</div>
           <v-row>
             <v-col cols="12" md="6">
-              <v-text-field v-model="name" type="text" label="Name" required></v-text-field>
+              <v-text-field v-model="name" type="text" label="Name" solo required></v-text-field>
             </v-col>
 
             <v-col cols="12" md="6">
-              <v-text-field v-model="tagline" type="text" label="Tagline" required></v-text-field>
-            </v-col>
-          </v-row>
-
-          <v-row>
-            <v-col cols="12" md="6">
-              <v-file-input v-model="bgImg" accept="image/*" ref="bgImg" label="bg-img"></v-file-input>
-            </v-col>
-
-            <v-col cols="12" md="6">
-              <v-file-input v-model="puppyImg" accept="image/*" ref="puppyImg" label="puppy-img"></v-file-input>
+              <v-text-field v-model="tagline" type="text" label="Tagline" solo required></v-text-field>
             </v-col>
           </v-row>
 
           <v-row>
             <v-col cols="12" md="6">
-              <v-text-field v-model="minLife" type="number" min="0" label="minLife" required></v-text-field>
+              <v-file-input
+                v-model="bgImg"
+                accept="image/*"
+                ref="bgImg"
+                label="bg-img"
+                solo
+                required
+              ></v-file-input>
             </v-col>
 
             <v-col cols="12" md="6">
-              <v-text-field v-model="maxLife" type="number" min="0" label="maxLife" required></v-text-field>
+              <v-file-input
+                v-model="puppyImg"
+                accept="image/*"
+                ref="puppyImg"
+                label="puppy-img"
+                solo
+                required
+              ></v-file-input>
             </v-col>
           </v-row>
 
           <v-row>
             <v-col cols="12" md="6">
-              <v-text-field v-model="learningRate" type="text" label="learningRate" required></v-text-field>
+              <v-text-field v-model="minLife" type="number" min="0" label="minLife" solo required></v-text-field>
             </v-col>
 
             <v-col cols="12" md="6">
-              <v-text-field v-model="size" type="text" label="size" required></v-text-field>
+              <v-text-field v-model="maxLife" type="number" min="0" label="maxLife" solo required></v-text-field>
             </v-col>
           </v-row>
 
           <v-row>
             <v-col cols="12" md="6">
-              <v-text-field v-model="minLitter" type="number" min="0" label="minLitter" required></v-text-field>
+              <v-text-field v-model="learningRate" type="text" label="learningRate" solo required></v-text-field>
             </v-col>
 
             <v-col cols="12" md="6">
-              <v-text-field v-model="maxLitter" type="number" min="0" label="maxLitter" required></v-text-field>
+              <v-text-field v-model="size" type="text" label="size" solo required></v-text-field>
+            </v-col>
+          </v-row>
+
+          <v-row>
+            <v-col cols="12" md="6">
+              <v-text-field
+                v-model="minLitter"
+                type="number"
+                min="0"
+                label="minLitter"
+                solo
+                required
+              ></v-text-field>
+            </v-col>
+
+            <v-col cols="12" md="6">
+              <v-text-field
+                v-model="maxLitter"
+                type="number"
+                min="0"
+                label="maxLitter"
+                solo
+                required
+              ></v-text-field>
             </v-col>
           </v-row>
 
           <v-row>
             <v-col cols="12" md="12">
-              <v-text-field v-model="weightUnit" type="number" min="0" label="weightUnit"></v-text-field>
+              <v-text-field
+                v-model="weightUnit"
+                type="number"
+                min="0"
+                label="weightUnit"
+                solo
+                required
+              ></v-text-field>
             </v-col>
           </v-row>
 
@@ -67,6 +102,7 @@
                 type="number"
                 min="0"
                 label="minMaleWeight"
+                solo
                 required
               ></v-text-field>
             </v-col>
@@ -77,6 +113,7 @@
                 type="number"
                 min="0"
                 label="	maxMaleWeight"
+                solo
                 required
               ></v-text-field>
             </v-col>
@@ -89,6 +126,7 @@
                 type="number"
                 min="0"
                 label="minFemaleWeight"
+                solo
                 required
               ></v-text-field>
             </v-col>
@@ -99,6 +137,7 @@
                 type="number"
                 min="0"
                 label="maxFemaleWeight	"
+                solo
                 required
               ></v-text-field>
             </v-col>
@@ -106,7 +145,14 @@
 
           <v-row>
             <v-col cols="12" md="12">
-              <v-text-field v-model="heightUnit" type="number" min="0" label="heightUnit"></v-text-field>
+              <v-text-field
+                v-model="heightUnit"
+                type="number"
+                min="0"
+                label="heightUnit"
+                solo
+                required
+              ></v-text-field>
             </v-col>
           </v-row>
 
@@ -117,6 +163,7 @@
                 type="number"
                 min="0"
                 label="minMaleHeight"
+                solo
                 required
               ></v-text-field>
             </v-col>
@@ -127,6 +174,7 @@
                 type="number"
                 min="0"
                 label="maxMaleHeight	"
+                solo
                 required
               ></v-text-field>
             </v-col>
@@ -139,6 +187,7 @@
                 type="number"
                 min="0"
                 label="minFemaleHeight"
+                solo
                 required
               ></v-text-field>
             </v-col>
@@ -149,6 +198,7 @@
                 type="number"
                 min="0"
                 label="maxFemaleHeight	"
+                solo
                 required
               ></v-text-field>
             </v-col>
@@ -161,94 +211,95 @@
                 type="number"
                 min="0"
                 label="originCountry"
+                solo
                 required
               ></v-text-field>
             </v-col>
 
             <v-col cols="12" md="6">
-              <v-text-field v-model="otherNames" type="text" label="otherNames" required></v-text-field>
+              <v-text-field v-model="otherNames" type="text" label="otherNames" solo required></v-text-field>
             </v-col>
           </v-row>
 
           <v-row>
             <v-col cols="12" md="6">
-              <v-text-field outlined v-model="desc1" auto-grow type="text" label="desc1" required></v-text-field>
+              <v-text-field outlined v-model="desc1" auto-grow type="text" label="desc1"></v-text-field>
             </v-col>
 
             <v-col cols="12" md="6">
-              <v-text-field outlined v-model="desc2" type="text" label="desc2" required></v-text-field>
+              <v-text-field outlined v-model="desc2" type="text" label="desc2" solo></v-text-field>
             </v-col>
           </v-row>
 
           <v-row>
             <v-col cols="12" md="6">
-              <v-text-field outlined v-model="desc3" type="text" label="desc3" required></v-text-field>
+              <v-text-field outlined v-model="desc3" type="text" label="desc3" solo></v-text-field>
             </v-col>
 
             <v-col cols="12" md="6">
-              <v-text-field outlined v-model="desc4" type="text" label="desc4" required></v-text-field>
+              <v-text-field outlined v-model="desc4" type="text" label="desc4" solo></v-text-field>
             </v-col>
           </v-row>
 
           <v-row>
             <v-col cols="12" md="6">
-              <v-text-field outlined v-model="desc5" type="text" label="desc5" required></v-text-field>
+              <v-text-field outlined v-model="desc5" type="text" label="desc5" solo></v-text-field>
             </v-col>
 
             <v-col cols="12" md="6">
-              <v-text-field outlined v-model="desc6" type="text" label="desc6" required></v-text-field>
+              <v-text-field outlined v-model="desc6" type="text" label="desc6" solo></v-text-field>
             </v-col>
           </v-row>
 
           <v-row>
             <v-col cols="12" md="6">
-              <v-text-field outlined v-model="desc7" type="text" label="desc7" required></v-text-field>
+              <v-text-field outlined v-model="desc7" type="text" label="desc7" solo></v-text-field>
             </v-col>
 
             <v-col cols="12" md="6">
-              <v-text-field outlined v-model="desc8" type="text" label="desc8" required></v-text-field>
+              <v-text-field outlined v-model="desc8" type="text" label="desc8" solo></v-text-field>
             </v-col>
           </v-row>
 
           <v-row>
             <v-col cols="12" md="6">
-              <v-text-field outlined v-model="desc9" type="text" label="desc9" required></v-text-field>
+              <v-text-field outlined v-model="desc9" type="text" label="desc9" solo></v-text-field>
             </v-col>
 
             <v-col cols="12" md="6">
-              <v-text-field outlined v-model="desc10" type="text" label="desc10" required></v-text-field>
+              <v-text-field outlined v-model="desc10" type="text" label="desc10" solo></v-text-field>
             </v-col>
           </v-row>
 
           <v-row>
             <v-col cols="12" md="6">
-              <v-text-field outlined v-model="desc11" type="text" label="desc11" required></v-text-field>
+              <v-text-field outlined v-model="desc11" type="text" label="desc11" solo></v-text-field>
             </v-col>
 
             <v-col cols="12" md="6">
-              <v-text-field outlined v-model="desc12" type="text" label="desc12" required></v-text-field>
+              <v-text-field outlined v-model="desc12" type="text" label="desc12" solo></v-text-field>
             </v-col>
           </v-row>
 
           <v-row>
             <v-col cols="12" md="6">
-              <v-text-field outlined v-model="desc13" type="text" label="desc13" required></v-text-field>
+              <v-text-field outlined v-model="desc13" type="text" label="desc13" solo></v-text-field>
             </v-col>
 
             <v-col cols="12" md="6">
-              <v-text-field outlined v-model="desc14" type="text" label="desc14" required></v-text-field>
-            </v-col>
-          </v-row>
-
-          <v-row>
-            <v-col cols="12" md="12">
-              <v-text-field outlined v-model="desc15" type="text" label="desc15" required></v-text-field>
+              <v-text-field outlined v-model="desc14" type="text" label="desc14" solo></v-text-field>
             </v-col>
           </v-row>
 
           <v-row>
             <v-col cols="12" md="12">
-              <v-file-input multiple v-model="images" ref="images" label="images"></v-file-input>
+              <v-text-field outlined v-model="desc15" type="text" label="desc15" solo></v-text-field>
+            </v-col>
+          </v-row>
+
+          <v-row>
+            <v-col cols="12" md="12">
+              <v-file-input multiple v-model="images" ref="images" label="images" solo required></v-file-input>
             </v-col>
           </v-row>
           <v-btn
@@ -264,29 +315,31 @@
       <!---Form complete-->
 
       <v-col v-for="(breed, i) in breeds" :key="i" cols="12" md="4">
-        <v-card class="pa-2" outlined>
-          <v-card-title class="headline" v-text="breed.breedId"></v-card-title>
-          <v-card-title class="headline" v-text="breed.name"></v-card-title>
-          <v-card-title class="headline" v-text="breed.puppyImg"></v-card-title>
+        <v-item-group>
+          <v-card class="pa-2" outlined>
+            <v-card-title class="headline" v-text="breed.breedId"></v-card-title>
+            <v-card-title class="headline" v-text="breed.name"></v-card-title>
+            <v-card-title class="headline" v-text="breed.puppyImg"></v-card-title>
 
-          <v-card-text>
-            <v-btn class="ma-2" color="#191919" @click="update(breed.breedId)" dark>Edit</v-btn>
-            <v-dialog v-model="dialog" persistent max-width="290">
-              <template v-slot:activator="{ on }">
-                <v-btn color="primary" dark v-on="on">Delete</v-btn>
-              </template>
-              <v-card>
-                <v-card-actions>
-                  <v-spacer></v-spacer>
-                  <v-btn color="green darken-1" text @click="dialog = false">Cancel</v-btn>
-                  <v-btn color="green darken-1" text @click="deleteBreed">Delete</v-btn>
-                </v-card-actions>
-              </v-card>
-            </v-dialog>
-            <!-- <v-btn class="ma-2" color="#191919" href="delete/+breedId" target="_blank" dark>Delete</v-btn> -->
-            <!-- localhost delete api route -->
-          </v-card-text>
-        </v-card>
+            <v-card-text>
+              <v-btn class="ma-2" color="#191919" @click="update(breed.breedId)" dark>Edit</v-btn>
+              <v-dialog v-model="dialog" persistent max-width="290">
+                <template v-slot:activator="{ on }">
+                  <v-btn color="primary" dark v-on="on">Delete</v-btn>
+                </template>
+                <v-card>
+                  <v-card-actions>
+                    <v-spacer></v-spacer>
+                    <v-btn color="green darken-1" text @click="dialog = false">Cancel</v-btn>
+                    <v-btn color="green darken-1" text @click="deleteBreed">Delete</v-btn>
+                  </v-card-actions>
+                </v-card>
+              </v-dialog>
+              <!-- <v-btn class="ma-2" color="#191919" href="delete/+breedId" target="_blank" dark>Delete</v-btn> -->
+              <!-- localhost delete api route -->
+            </v-card-text>
+          </v-card>
+        </v-item-group>
       </v-col>
       <!--card complete-->
     </v-row>

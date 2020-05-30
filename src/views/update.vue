@@ -6,53 +6,74 @@
           <div class="display-2 black-text text-center">Update Data</div>
           <v-row>
             <v-col cols="12" md="6">
-              <v-text-field v-model="name" type="text" label="Name" required></v-text-field>
+              <v-text-field v-model="name" type="text" label="Name" solo required></v-text-field>
             </v-col>
 
             <v-col cols="12" md="6">
-              <v-text-field v-model="tagline" type="text" label="Tagline" required></v-text-field>
+              <v-text-field v-model="tagline" type="text" label="Tagline" solo required></v-text-field>
             </v-col>
           </v-row>
 
           <v-row>
             <v-col cols="12" md="6">
-              <v-file-input v-model="bg" accept="image/*" label="bg-img"></v-file-input>
+              <v-file-input v-model="bg" accept="image/*" label="bg-img" solo required></v-file-input>
             </v-col>
 
             <v-col cols="12" md="6">
-              <v-file-input v-model="puppy" accept="image/*" label="puppy-img"></v-file-input>
+              <v-file-input v-model="puppy" accept="image/*" label="puppy-img" solo required></v-file-input>
             </v-col>
           </v-row>
           <v-row>
             <v-col cols="12" md="6">
-              <v-text-field v-model="minLife" type="number" min="0" label="minLife" required></v-text-field>
+              <v-text-field v-model="minLife" type="number" min="0" label="minLife" solo required></v-text-field>
             </v-col>
 
             <v-col cols="12" md="6">
-              <v-text-field v-model="maxlife" type="number" min="0" label="maxlife" required></v-text-field>
+              <v-text-field v-model="maxlife" type="number" min="0" label="maxlife" solo required></v-text-field>
             </v-col>
           </v-row>
           <v-row>
             <v-col cols="12" md="6">
-              <v-text-field v-model="learningRate" type="text" label="learningRate" required></v-text-field>
+              <v-text-field v-model="learningRate" type="text" label="learningRate" solo required></v-text-field>
             </v-col>
 
             <v-col cols="12" md="6">
-              <v-text-field v-model="size" type="text" label="size" required></v-text-field>
+              <v-text-field v-model="size" type="text" label="size" solo required></v-text-field>
             </v-col>
           </v-row>
           <v-row>
             <v-col cols="12" md="6">
-              <v-text-field v-model="minLitter" type="number" min="0" label="minLitter" required></v-text-field>
+              <v-text-field
+                v-model="minLitter"
+                type="number"
+                min="0"
+                label="minLitter"
+                solo
+                required
+              ></v-text-field>
             </v-col>
 
             <v-col cols="12" md="6">
-              <v-text-field v-model="maxLitter" type="number" min="0" label="maxLitter" required></v-text-field>
+              <v-text-field
+                v-model="maxLitter"
+                type="number"
+                min="0"
+                label="maxLitter"
+                solo
+                required
+              ></v-text-field>
             </v-col>
           </v-row>
           <v-row>
             <v-col cols="12" md="12">
-              <v-text-field v-model="weightUnit" type="number" min="0" label="weightUnit"></v-text-field>
+              <v-text-field
+                v-model="weightUnit"
+                type="number"
+                min="0"
+                label="weightUnit"
+                solo
+                required
+              ></v-text-field>
             </v-col>
           </v-row>
           <v-row>
@@ -62,6 +83,7 @@
                 type="number"
                 min="0"
                 label="minMaleWeight"
+                solo
                 required
               ></v-text-field>
             </v-col>
@@ -72,6 +94,7 @@
                 type="number"
                 min="0"
                 label="	maxMaleWeight"
+                solo
                 required
               ></v-text-field>
             </v-col>
@@ -83,6 +106,7 @@
                 type="number"
                 min="0"
                 label="minFemaleWeight"
+                solo
                 required
               ></v-text-field>
             </v-col>
@@ -93,6 +117,7 @@
                 type="number"
                 min="0"
                 label="maxFemaleWeight	"
+                solo
                 required
               ></v-text-field>
             </v-col>
@@ -100,7 +125,14 @@
 
           <v-row>
             <v-col cols="12" md="12">
-              <v-text-field v-model="heightUnit" type="number" min="0" label="heightUnit"></v-text-field>
+              <v-text-field
+                v-model="heightUnit"
+                type="number"
+                min="0"
+                label="heightUnit"
+                solo
+                required
+              ></v-text-field>
             </v-col>
           </v-row>
 
@@ -111,6 +143,7 @@
                 type="number"
                 min="0"
                 label="minMaleHeight"
+                solo
                 required
               ></v-text-field>
             </v-col>
@@ -121,6 +154,7 @@
                 type="number"
                 min="0"
                 label="maxMaleHeight	"
+                solo
                 required
               ></v-text-field>
             </v-col>
@@ -133,6 +167,7 @@
                 type="number"
                 min="0"
                 label="minFemaleHeight"
+                solo
                 required
               ></v-text-field>
             </v-col>
@@ -143,6 +178,7 @@
                 type="number"
                 min="0"
                 label="maxFemaleHeight	"
+                solo
                 required
               ></v-text-field>
             </v-col>
@@ -155,88 +191,89 @@
                 type="number"
                 min="0"
                 label="originCountry"
+                solo
                 required
               ></v-text-field>
             </v-col>
 
             <v-col cols="12" md="6">
-              <v-text-field v-model="otherNames" type="text" label="otherNames" required></v-text-field>
+              <v-text-field v-model="otherNames" type="text" label="otherNames" solo required></v-text-field>
             </v-col>
           </v-row>
 
           <v-row>
             <v-col cols="12" md="6">
-              <v-text-field outlined v-model="desc1" type="text" label="desc1" required></v-text-field>
+              <v-text-field outlined v-model="desc1" type="text" label="desc1" solo required></v-text-field>
             </v-col>
 
             <v-col cols="12" md="6">
-              <v-text-field outlined v-model="desc2" type="text" label="desc2" required></v-text-field>
-            </v-col>
-          </v-row>
-
-          <v-row>
-            <v-col cols="12" md="6">
-              <v-text-field outlined v-model="desc3" type="text" label="desc3" required></v-text-field>
-            </v-col>
-
-            <v-col cols="12" md="6">
-              <v-text-field outlined v-model="desc4" type="text" label="desc4" required></v-text-field>
+              <v-text-field outlined v-model="desc2" type="text" label="desc2" solo></v-text-field>
             </v-col>
           </v-row>
 
           <v-row>
             <v-col cols="12" md="6">
-              <v-text-field outlined v-model="desc5" type="text" label="desc5" required></v-text-field>
+              <v-text-field outlined v-model="desc3" type="text" label="desc3" solo></v-text-field>
             </v-col>
 
             <v-col cols="12" md="6">
-              <v-text-field outlined v-model="desc6" type="text" label="desc6" required></v-text-field>
-            </v-col>
-          </v-row>
-
-          <v-row>
-            <v-col cols="12" md="6">
-              <v-text-field outlined v-model="desc7" type="text" label="desc7" required></v-text-field>
-            </v-col>
-
-            <v-col cols="12" md="6">
-              <v-text-field outlined v-model="desc8" type="text" label="desc8" required></v-text-field>
+              <v-text-field outlined v-model="desc4" type="text" label="desc4" solo></v-text-field>
             </v-col>
           </v-row>
 
           <v-row>
             <v-col cols="12" md="6">
-              <v-text-field outlined v-model="desc9" type="text" label="desc9" required></v-text-field>
+              <v-text-field outlined v-model="desc5" type="text" label="desc5" solo></v-text-field>
             </v-col>
 
             <v-col cols="12" md="6">
-              <v-text-field outlined v-model="desc10" type="text" label="desc10" required></v-text-field>
-            </v-col>
-          </v-row>
-
-          <v-row>
-            <v-col cols="12" md="6">
-              <v-text-field outlined v-model="desc11" type="text" label="desc11" required></v-text-field>
-            </v-col>
-
-            <v-col cols="12" md="6">
-              <v-text-field outlined v-model="desc12" type="text" label="desc12" required></v-text-field>
+              <v-text-field outlined v-model="desc6" type="text" label="desc6" solo></v-text-field>
             </v-col>
           </v-row>
 
           <v-row>
             <v-col cols="12" md="6">
-              <v-text-field outlined v-model="desc13" type="text" label="desc13" required></v-text-field>
+              <v-text-field outlined v-model="desc7" type="text" label="desc7" solo></v-text-field>
             </v-col>
 
             <v-col cols="12" md="6">
-              <v-text-field outlined v-model="desc14" type="text" label="desc14" required></v-text-field>
+              <v-text-field outlined v-model="desc8" type="text" label="desc8" solo></v-text-field>
+            </v-col>
+          </v-row>
+
+          <v-row>
+            <v-col cols="12" md="6">
+              <v-text-field outlined v-model="desc9" type="text" label="desc9" solo></v-text-field>
+            </v-col>
+
+            <v-col cols="12" md="6">
+              <v-text-field outlined v-model="desc10" type="text" label="desc10" solo></v-text-field>
+            </v-col>
+          </v-row>
+
+          <v-row>
+            <v-col cols="12" md="6">
+              <v-text-field outlined v-model="desc11" type="text" label="desc11" solo></v-text-field>
+            </v-col>
+
+            <v-col cols="12" md="6">
+              <v-text-field outlined v-model="desc12" type="text" label="desc12" solo></v-text-field>
+            </v-col>
+          </v-row>
+
+          <v-row>
+            <v-col cols="12" md="6">
+              <v-text-field outlined v-model="desc13" type="text" label="desc13" solo></v-text-field>
+            </v-col>
+
+            <v-col cols="12" md="6">
+              <v-text-field outlined v-model="desc14" type="text" label="desc14" solo></v-text-field>
             </v-col>
           </v-row>
 
           <v-row>
             <v-col cols="12" md="12">
-              <v-text-field outlined v-model="desc15" type="text" label="desc15" required></v-text-field>
+              <v-text-field outlined v-model="desc15" type="text" label="desc15" solo></v-text-field>
             </v-col>
           </v-row>
 
@@ -412,3 +449,6 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+</style>

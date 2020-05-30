@@ -21,6 +21,6 @@ export default {
 
 <style lang="scss">
 #app {
-  background: white;
+  background: #f2f2f2;
 }
 </style>
