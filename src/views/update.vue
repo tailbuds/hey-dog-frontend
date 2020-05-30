@@ -3,7 +3,7 @@
     <v-row>
       <v-col lg="7">
         <v-container>
-          <div class="display-2 black-text text-center">Upload Data</div>
+          <div class="display-2 black-text text-center">Update Data</div>
           <v-row>
             <v-col cols="12" md="6">
               <v-text-field v-model="name" type="text" label="Name" required></v-text-field>

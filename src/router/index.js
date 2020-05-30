@@ -11,10 +11,11 @@ const routes = [
     component: home,
   },
   {
-    path: '/update',
-    name: 'update',
-    component: () =>
-      import(/* webpackChunkName: "profile" */ '../views/update.vue'),
+    path: '/update/:breedId',
+    name: '/update/:breedId',
+    component: () => {
+      import(/* webpackChunkName: "update" */ '../views/update.vue');
+    },
   },
 ];
 
