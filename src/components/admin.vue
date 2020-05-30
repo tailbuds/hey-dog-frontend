@@ -1,8 +1,8 @@
 <template>
   <v-app>
     <v-row>
-      <v-col lg="8">
-        <v-container>
+      <v-container>
+        <div class="padding">
           <div class="display-2 black-text text-center">Upload Data</div>
           <v-row>
             <v-col cols="12" md="6">
@@ -223,7 +223,7 @@
 
           <v-row>
             <v-col cols="12" md="6">
-              <v-text-field outlined v-model="desc1" auto-grow type="text" label="desc1"></v-text-field>
+              <v-text-field outlined v-model="desc1" auto-grow type="text" label="desc1" solo></v-text-field>
             </v-col>
 
             <v-col cols="12" md="6">
@@ -302,46 +302,18 @@
               <v-file-input multiple v-model="images" ref="images" label="images" solo required></v-file-input>
             </v-col>
           </v-row>
-          <v-btn
-            class="subtitle-1"
-            id="submit"
-            name="submit"
-            v-on:click="submitBreed()"
-            type="submit"
-            large
-          >Submit</v-btn>
-        </v-container>
-      </v-col>
-      <!---Form complete-->
-
-      <v-col v-for="(breed, i) in breeds" :key="i" cols="12" md="4">
-        <v-item-group>
-          <v-card class="pa-2" outlined>
-            <v-card-title class="headline" v-text="breed.breedId"></v-card-title>
-            <v-card-title class="headline" v-text="breed.name"></v-card-title>
-            <v-card-title class="headline" v-text="breed.puppyImg"></v-card-title>
-
-            <v-card-text>
-              <v-btn class="ma-2" color="#191919" @click="update(breed.breedId)" dark>Edit</v-btn>
-              <v-dialog v-model="dialog" persistent max-width="290">
-                <template v-slot:activator="{ on }">
-                  <v-btn color="primary" dark v-on="on">Delete</v-btn>
-                </template>
-                <v-card>
-                  <v-card-actions>
-                    <v-spacer></v-spacer>
-                    <v-btn color="green darken-1" text @click="dialog = false">Cancel</v-btn>
-                    <v-btn color="green darken-1" text @click="deleteBreed">Delete</v-btn>
-                  </v-card-actions>
-                </v-card>
-              </v-dialog>
-              <!-- <v-btn class="ma-2" color="#191919" href="delete/+breedId" target="_blank" dark>Delete</v-btn> -->
-              <!-- localhost delete api route -->
-            </v-card-text>
-          </v-card>
-        </v-item-group>
-      </v-col>
-      <!--card complete-->
+          <div class="text-center">
+            <v-btn
+              class="subtitle-1 success"
+              id="submit"
+              name="submit"
+              v-on:click="submitBreed()"
+              type="submit"
+              large
+            >Submit</v-btn>
+          </div>
+        </div>
+      </v-container>
     </v-row>
   </v-app>
 </template>
@@ -350,21 +322,8 @@
 import Url from "../url";
 import axios from "axios";
 export default {
-  mounted() {
-    axios
-      .get(Url.url + "/breeds")
-      .then(breed => {
-        this.breeds = breed.data;
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  },
-
   data() {
     return {
-      breeds: null,
-      dialog: false,
       name: "Zeta",
       tagline: "Good boy",
       bgImg: null,
@@ -464,21 +423,14 @@ export default {
         .catch(() => {
           alert("Failed in creating breed");
         });
-    },
-
-    deleteBreed() {
-      axios
-        .delete(Url.url + "/breeds")
-        .then(res => {
-          console.log(res);
-          this.dialog = false;
-        })
-        .catch();
-    },
-
-    update(breedId) {
-      this.$router.push(`/update/${breedId}`);
     }
   }
 };
 </script>
+
+<style lang="css" scoped>
+.padding {
+  padding: 10%;
+  padding-top: 2%;
+}
+</style>
