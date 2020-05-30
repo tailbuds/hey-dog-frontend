@@ -356,7 +356,7 @@ export default {
       this.files = [...this.files, ...files];
       console.log(files);
       const formData = new formData();
-      _.forEach(this.files, file => {
+      this.files.Map(file => {
         formData.append("files", file);
       });
 

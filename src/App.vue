@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <v-content>
-      <HelloWorld />
+      <admin />
     </v-content>
   </v-app>
 </template>
@@ -9,13 +9,13 @@
 
 
 <script>
-import HelloWorld from "./components/HelloWorld";
+import admin from "./components/admin";
 
 export default {
   name: "App",
 
   components: {
-    HelloWorld
+    admin
   },
 
   data: () => ({
