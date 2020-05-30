@@ -242,7 +242,7 @@
 
           <v-row>
             <v-col cols="12" md="12">
-              <v-text-field v-model="images" label="images"></v-text-field>>
+              <v-file-input multiple v-model="images" ref="files" label="images"></v-file-input>
             </v-col>
           </v-row>
           <v-btn
@@ -345,23 +345,30 @@ export default {
       desc13: "",
       desc14: "",
       desc15: "",
-      images: null
+      images: [],
+      files: []
     };
   },
 
   methods: {
     submitBreed: function() {
-      // let formData = new FormData();
-      // for (var i = 0; i < this.$refs.file.files.length; i++) {
-      //   let file = this.$refs.file.files[i];
-      //   console.log(file);
-      //   formData.append("files[" + i + "]", file);
-      // }
+      var files = this.$refs.files.files;
+      this.files = [...this.files, ...files];
+      console.log(files);
+      const formData = new formData();
+      _.forEach(this.files, file => {
+        formData.append("files", file);
+      });
 
+      let formData1 = new FormData();
+      formData1.append("file", this.bgImg);
+
+      let formData2 = new FormData();
+      formData2.append("file", this.puppyImg);
       var name = this.name;
       var tagline = this.tagline;
-      var bgImg = this.bgImg;
-      var puppyImg = this.puppyImg;
+      // var bgImg = this.bgImg;
+      // var puppyImg = this.puppyImg;
       var minLife = this.minLife;
       var maxLife = this.maxLife;
       var learningRate = this.learningRate;
@@ -395,7 +402,7 @@ export default {
       var desc13 = this.desc13;
       var desc14 = this.desc14;
       var desc15 = this.desc15;
-      var images = this.images;
+      // var images = this.files;
       axios
         .post(
           url.url + "/breeds",
@@ -403,8 +410,8 @@ export default {
           {
             name: name,
             tagline: tagline,
-            bgImg: bgImg,
-            puppyImg: puppyImg,
+            bgImg: formData1,
+            puppyImg: formData2,
             minLife: minLife,
             maxLife: maxLife,
             learningRate: learningRate,
@@ -438,9 +445,15 @@ export default {
             desc13: desc13,
             desc14: desc14,
             desc15: desc15,
-            images: images
+            images: formData
+          },
+          {
+            headers: {
+              "Content-Type": "multipart/form-data"
+            }
           }
         )
+
         .then(response => {
           console.log(response);
         })
