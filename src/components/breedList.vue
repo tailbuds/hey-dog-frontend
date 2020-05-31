@@ -100,7 +100,10 @@ export default {
     },
 
     update(breedId) {
-      this.$router.push(`/update/${breedId}`);
+      this.$router.push({
+        path: `/update/${breedId}`,
+        query: { edit: "true" }
+      });
     }
   }
 };

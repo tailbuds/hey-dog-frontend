@@ -13,6 +13,7 @@ const routes = [
   },
   {
     path: '/update/:breedId',
+    query: { edit: 'true' },
     name: '/update/:breedId',
     component: update,
   },
